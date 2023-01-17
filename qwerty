@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -n $(cat "$1" | rofi -dmenu -l 25) | xclip -selection c
