@@ -1,11 +1,17 @@
 # Qwerty
 A simple bash tool to copy a line from a file to the clipboard
 
+# Usage
+1. `qwerty <file>`
+2. Select the line you want to copy or search for it in rofi.
+3. Done. Just paste it.
+
+
 # Dependencies
 - [rofi](https://github.com/davatorium/rofi)
 - [xclip](https://github.com/astrand/xclip)
   - If you use wayland get [wl-clipboard](https://github.com/bugaevc/wl-clipboard) edit the script to look like:
-  ```
+  ```bash
   #!/bin/bash
   echo -n $(cat "$1" | rofi -dmenu -l 25) | wl-copy
   ```
