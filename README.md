@@ -8,6 +8,7 @@ A simple bash tool to copy a line from a file to the clipboard
 
 
 # Dependencies
+(you will need to download them yourself)
 #### Xorg
 - [rofi](https://github.com/davatorium/rofi)
 - [xclip](https://github.com/astrand/xclip)
