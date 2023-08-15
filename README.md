@@ -8,7 +8,7 @@ A simple bash tool to copy a line from a file to the clipboard
 
 
 # Dependencies
-(you will need to download them yourself)
+(you will need to download them yourself if they arent already installed)
 #### Xorg
 - [rofi](https://github.com/davatorium/rofi)
 - [xclip](https://github.com/astrand/xclip)
@@ -18,10 +18,9 @@ A simple bash tool to copy a line from a file to the clipboard
   - [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 
 # Install
-1. Download the `xorg-qwerty` script if you use Xorg or download the `wayland-qwerty` script if you use Wayland
-2. Rename the script to `qwerty` or something else if you would like to
-3. Run `chmod +x qwerty` (or whatever you changed it to)
-4. Place the qwerty script into the PATH such as ~/.local/bin or /usr/local/bin
+1. Download the `qwerty` script.
+2. Run `chmod +x qwerty`
+3. Place the qwerty script into the PATH such as ~/.local/bin or /usr/local/bin
 #### Optional steps
 5. If you want to run it when you right-click on a file there is also a provided .desktop file and image for it.
 Just put the .desktop file wherever you put them, typically ~/.local/share/applications
