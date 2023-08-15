@@ -7,7 +7,6 @@
 #░░░  github.com/flufficat/qwerty  ░░░
 #░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-and-copy-func () {
 # Manually set platform as wayland(w) or X11(x)
 #plat=w
 #plat=x
@@ -24,6 +23,8 @@ if [[ -z $plat ]] ; then
         plat="x"
     fi
 fi
+
+and-copy-func () {
 # Creating temporary file
 if [[ ! -f /tmp/andcopy.txt ]] ; then
 touch /tmp/andcopy.txt 
@@ -77,10 +78,24 @@ if test "$#" -gt 0; then
     case "$1" in
         -e|--edit)
 	    shift
-            echo -n $(cat "$1" | wofi -H 80% -W 40% --dmenu 2> /dev/null) | wl-copy && and-copy-func
+            if   [[ $plat == "w" ]] ; then
+                echo -n $(cat "$1" | wofi -H 80% -W 40% --dmenu 2> /dev/null) | wl-copy && and-copy-func
+            elif [[ $plat == "x" ]] ; then 
+		echo -n $(cat "$1" | rofi -theme-str 'window {width: 40%;}' -dmenu) | xclip -selection c && and-copy-func
+	    else
+                echo "Please set the platform you are using manually in this script"
+                exit 1
+	    fi
 	;;
         *)
-            echo -n $(cat "$1" | wofi -H 80% -W 40% --dmenu 2> /dev/null) | wl-copy
+            if   [[ $plat == "w" ]] ; then
+                echo -n $(cat "$1" | wofi -H 80% -W 40% --dmenu 2> /dev/null) | wl-copy
+            elif [[ $plat == "x" ]] ; then 
+		echo -n $(cat "$1" | rofi -theme-str 'window {width: 40%;}' -dmenu) | xclip -selection c
+	    else
+                echo "Please set the platform you are using manually in this script"
+                exit 1
+	    fi
 	;;
     esac
 else
