@@ -2,11 +2,12 @@
 A simple bash tool to copy a line from a file to the clipboard
 
 # Usage
-1. `qwerty <file>`
-2. Select the line you want to copy or search for it in rofi.
+1. `qwerty [-e] <file>`
+2. Select the line you want to copy or search for it in rofi/wofi.
 3. Done. Just paste it.
 
-
+# Options
+`-e --edit` after selecting the line in rofi/wofi, open it in an editor, edit it and save that to the clipboard instead
 # Dependencies
 (you will need to download them yourself if they arent already installed)
 #### Xorg
