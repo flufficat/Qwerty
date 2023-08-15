@@ -1,2 +1,0 @@
-#!/bin/bash
-echo -n $(cat "$1" | rofi -theme-str 'window {width: 40%;}' -dmenu) | xclip -selection c
